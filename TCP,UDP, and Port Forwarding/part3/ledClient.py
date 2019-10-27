@@ -5,7 +5,6 @@
 # 
 # Team members: Emily Kuo, Mailani Gelles
 # Github repository link:
-# https://github.com/usc-ee250-fall2019/lab03-emily-mailani.git
 
 import socket
 
