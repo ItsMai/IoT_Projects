@@ -11,8 +11,8 @@ SLICE_SIZE = 0.15 #seconds
 WINDOW_SIZE = 0.25 #seconds
 NUMBER_DIC = {}
 
-LOWER_FRQS = [697, 770, 852, 941]
-HIGHER_FRQS = [1209, 1336, 1477, 1633]
+# LOWER_FRQS = [697, 770, 852, 941]
+# HIGHER_FRQS = [1209, 1336, 1477, 1633]
 FRQ_THRES = 20
 
 def get_max_frq(frq, fft):
