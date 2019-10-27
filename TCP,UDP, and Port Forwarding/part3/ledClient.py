@@ -4,7 +4,6 @@
 # and off the Grove LED using TCP packets.
 # 
 # Team members: Emily Kuo, Mailani Gelles
-# Github repository link:
 
 import socket
 
