@@ -28,9 +28,9 @@ def Main():
 
     # UDP is connectionless, so a client does not formally connect to a server
     # before sending a message.
-    #emily server_addr = '192.168.0.176' #OS's IP address
-    #mailani:
-    server_addr = '192.168.0.239'
+    #emily 
+    server_addr = '192.168.0.176' #OS's IP address
+    #mailani: server_addr = '192.168.0.239'
     dst_port = 9000
     server = (server_addr, dst_port)
     dist = 0
