@@ -1,5 +1,4 @@
 # Mailani Gelles / Emily Kuo 
-# github.com/usc-ee250-fall2019/lab05-emily-mailani
 import requests
 import sys
 import time
@@ -12,8 +11,8 @@ import grove_rgb_lcd as lcd
 # Modules for my apps
 import my_reddit
 import my_weather
-import my_facts
-#import my_app  # TODO: Create my_app.py using another API, following the examples as a template
+import my_app
+
 
 PORT_BUZZER = 2     # D2
 PORT_BUTTON = 4     # D4
@@ -31,7 +30,7 @@ lcd.setRGB(0, 128, 0)
 APPS = [
     my_weather.WEATHER_APP,
     my_reddit.QOTD_APP,
-    my_facts.CAT_APP
+    my_app.CAT_APP
 ]
 
 # Cache to store values so we save time and don't abuse the APIs
@@ -45,11 +44,11 @@ ind = 0     # Output index
 
 while True:
     try:
-        turn = analogRead(potentiometer)
+        turn = grovepi.analogRead(potentiometer)
         if turn > 0 and turn < 205:
             lcd.setRGB(255, 0, 0)        #red
         elif turn > 205 and turn < 410:
-            lcd.setRGB(130, 150, 0)      #orange
+            lcd.setRGB(255, 165, 0)      #orange
         elif turn > 410 and turn < 615:
             lcd.setRGB(255, 255, 0)      #yellow
         elif turn > 615 and turn < 820:
@@ -78,7 +77,6 @@ while True:
         ind +=1
         if ind is 16:
             ind = 0
-        # TODO: Make the output scroll across the screen (should take 1-2 lines of code)
 
 
     except KeyboardInterrupt:
