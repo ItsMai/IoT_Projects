@@ -4,8 +4,6 @@
 # the LED via TCP packets.
 # 
 # Team members: Emily Kuo, Mailani Gelles
-# Github repository link:
-# https://github.com/usc-ee250-fall2019/lab03-emily-mailani.git
 
 import sys
 # By appending the folder of all the GrovePi libraries to the system path here,
