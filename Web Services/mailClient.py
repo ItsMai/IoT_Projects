@@ -1,5 +1,4 @@
 # Mailani Gelles | Emily Kuo
-# https://github.com/usc-ee250-fall2019/lab06-emily-mailani
 import argparse
 
 import mailboxTools
