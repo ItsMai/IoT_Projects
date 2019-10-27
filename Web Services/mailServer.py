@@ -1,5 +1,4 @@
 # Names: Emily, Mailani
-# Github website: https://github.com/usc-ee250-fall2019/lab06-emily-mailani
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -53,21 +52,16 @@ def get_mailbox_callback():
     # The object returned will be sent back as an HTTP message to the requester
     return response
 
-# TODO: Use Flash's route() decorator to add support to your HTTP server for
-# handling GET requests made to the URL '/mailbox/search'
-#
-# Use get_mailbox_callback() as an example. You'll need to use mailboxManager
-# for this request as well, so make sure to spend some time understanding how
-# it works and the features it provides.
-#
-# Your implementation should handle reasonable error cases as well, such as an
-# incorrect password.
 
 @app.route('/mailbox/search', methods=['GET'])
 def search_mailbox_callback():
 
+    # Extract the key/value field for password
     password = request.args.get('password')
+
+    # Check that the password is valid
     if password == mailbox_password:
+        # Use Flask's jsonify function to format the dictionary as JSON
         response = jsonify(mailbox_manager.get_mail(request.args.get('field'),request.args.get('text')))
     else:
         if password == None:
@@ -140,5 +134,4 @@ if __name__ == '__main__':
     mailbox_password = args.p   # password
     mailbox_manager = mailboxManager.mailboxManager()
 
-    app.run(debug=False, host='0.0.0.0', port=5000)
-
+    app.run(debug=False, host='127.0.0.1', port=5000)
