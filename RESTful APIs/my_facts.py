@@ -1,5 +1,4 @@
 # Mailani Gelles / Emily Kuo 
-# github.com/usc-ee250-fall2019/lab05-emily-mailani
 import requests
 import socket
 import json
