@@ -1,44 +1,32 @@
+# Names: Emily, Mailani
 import pickle
+import os
 
 notes = []
-
 # TODO: Using the pickle module...
 
 # A. If notes.pickle exists, read it in using pickle and assign the content to
 #   the notes variable
-with open(self, 'rb') as f:
-	data = pickle.load(f)
-	print("sppoky\n")
+if not os.path.exists("notes.pickle"):
+	os.mknod("notes.pickle") # create a file
+file1 = open("notes.pickle","rb") # open the file in read/binary mode
+
+try:
+    notes = pickle.load(file1)
+except EOFError:
+    print("empty")
+    notes = []
+file1.close()
+
 # B. Print out notes
+for i in range(len(notes)):
+	print(notes[i])
 
 # C. Read in a string from the user using input() and append it to notes
+temp = input()
+notes.append(temp)
 
 # D. Save notes to notes.pickle
-
-# dump information to that file
-# Simple class representing a record in our database.
-
-
-# class Boo:
-#     def __init__(self, s):
-#         self.s = s
-#     def __repr__(self):
-#         return "Thing: %s" % self.s
-#     def save(self, notes):
-#         """Save thing to a file."""
-#         f = file(notes,"w")
-#         pickle.dump(self,f)
-#         f.close()
-#     def load(notes):
-#         """Return a thing loaded from a file."""
-#         f = file(notes,"r")
-#         obj = pickle.load(f)
-#         f.close()
-#         return obj
-#     # make load a static method
-#     load = staticmethod(load)
-
-# if __name__ == "__main__":
-#     # code for standalone use
-#     foo = Boo("notes")
-#     foo.save("notes.pickle")
+file2 = open("notes.pickle","wb") # open the file in write/binary mode
+pickle.dump(notes,file2)
+file2.close()
