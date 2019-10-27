@@ -1,11 +1,9 @@
 # Mailani Gelles / Emily Kuo 
-# github.com/usc-ee250-fall2019/lab05-emily-mailani
 
 import requests
 import json
 # OpenWeatherMap API: https://openweathermap.org/current
 
-# TODO: Sign up for an API key
 OWM_API_KEY = '3896a7c84928dd6c740abca82449d92c' # OpenWeatherMap API Key
 
 DEFAULT_ZIP = 90089
