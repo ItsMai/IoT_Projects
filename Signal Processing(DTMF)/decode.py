@@ -1,5 +1,4 @@
 # Mailani Gelles / Emily Kuo 
-# github.com/usc-ee250-fall2019/lab08-emily-mailani
 import matplotlib.pyplot as plt
 import numpy as np
 from pydub import AudioSegment
