@@ -1,9 +1,7 @@
 """EE 250L Lab 04 Starter Code
 Mailani Gelles and Emily Kuo
-http://github.com/usc-ee250-fall2019/lab04-emily-mailani
 Mailani's RPI private IP : '192.168.0.239'
 Emily's RPI's private IP : '192.168.1.229'
-
 Run vm_subscriber.py in a separate terminal on your VM."""
 
 import paho.mqtt.client as mqtt
@@ -26,7 +24,7 @@ def button(client, userdata, message):
 
 def ultrasonicRanger(client, userdata, message):
     #the third argument is 'message' here unlike 'msg' in on_message 
-    print("VM: " + shtr(message.payload, "utf-8") + " cm" )
+    print("VM: " + str(message.payload, "utf-8") + " cm" )
 
 
 #Default message callback. Please use custom callbacks.
@@ -43,5 +41,3 @@ if __name__ == '__main__':
 
     while True:
         time.sleep(1)
-            
-
